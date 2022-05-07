@@ -1,0 +1,124 @@
+
+.marginized {
+    margin:10px;
+}
+
+.padding_used {
+    padding:10px;
+}
+
+.centralized {
+
+    width:70%;
+}
+
+.height_150 {
+    height:150px;
+}
+
+/* 
+source: https://alvarotrigo.com/blog/css-text-animations/
+Method 2
+Rainbow effect for the text
+ */
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 6s linear infinite;
+  display: inline-block;
+      
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.border_radi{
+    border-radius:10px;
+}
+
+
+/* ensuring screensize flexibility, disabling display of some arguments for some screen sizes (same content shown, the structure is changed) */
+@media (min-width: 901px) {
+    .no_display_large {
+        display: none;
+    }
+}
+
+@media (max-width: 699px){
+    .no_display_small {
+        display: none;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px){
+    .no_display_medium {
+        display: none;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 105, 180)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+
+
+    a.dropdownitem {
+        font-size: 20px;
+      }
+      a.dropdownitem:link {
+        color: navajowhite;
+        text-decoration: none;
+      }
+  
+      a.dropdownitem:visited {
+        color: navajowhite;
+        text-decoration: none;
+      }
+  
+      /* mouse over link */
+      a.dropdownitem:hover {
+        color: hotpink;
+        text-decoration: none;
+      }
+      a.dropdownitem::before {
+        white-space: pre;
+        content: "\00a0\00a0\00a0";
+      }
+      a.dropdownitem::after {
+        white-space: pre;
+        content: "\a";
+      }
+      a.dropdown-toggle:link {
+        color: navajowhite;
+        text-decoration: none;
+      }
+  
+      a.dropdown-toggle:visited {
+        color: navajowhite;
+        text-decoration: none;
+      }
+  
+      /* mouse over link */
+      a.dropdown-toggle:hover {
+        color: hotpink;
+        text-decoration: none;
+      }
+  

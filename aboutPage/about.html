@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="test-paralax.css">
+    <link rel="stylesheet" type="text/css" href="../common_css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../images/LHC-logo-darkbg.png">
+    <title>About LHC</title>
+<style>
+  
+        @font-face {
+          font-family:"Shagadelic";
+          src: url("fonts/BoldTestament-MxlY.ttf") format("truetype");
+        }
+
+        @font-face {
+            font-family: "Ash";
+            src: url("../fonts/AshemarkRegular-d7aR.otf") format("truetype");
+        }
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+        }
+
+        body {
+          background-color: #0a1b2d;
+          color: navajowhite;
+          font-family: "Shagadelic";
+          font-size: 1rem;
+          line-height: 1;
+          overflow-x:hidden;
+          overflow-y:hidden;
+        }
+
+        .container {
+          max-width: 768px;
+          width: 85%;
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+
+        .header {
+          text-align: center;
+          margin-bottom: 8rem;
+        }
+
+        .header .container {
+            padding: 3rem 0;
+        }
+
+        h1,
+        h2 {
+          font-family: inherit;
+          line-height: 2.0;
+          text-shadow: 0px 2px 18px rgb(255 255 255 / 10%);
+        }
+
+        h1 {
+          font-size: clamp(2rem, 8vw, 6rem);
+          color: hotpink;
+          text-shadow: 0px 2px 18px rgb(255 105 180 / 60%);
+        }
+
+        h2 {
+          font-size: clamp(2rem, 6vw, 6rem);
+        }
+
+        .content-wrapper {
+          padding: 0.5rem 0;
+        }
+
+        .content-wrapper p:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .body-wrapper {
+          height: 100vh;
+          overflow-x: hidden;
+          overflow-y: auto;
+          perspective: 10px;
+        }
+
+        .section {
+          position: relative;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+
+        .parallax {
+          position: relative;
+          min-height: 300px;
+          height: 60vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform-style: preserve-3d;
+          z-index: -1;
+        }
+
+        .parallax > div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-position: center;
+            background-size: cover;
+            filter: contrast(1.2);
+            box-shadow: 0px 0px 8px rgb(255 255 255 / 70%);
+        }
+
+        .parallax > h2 {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .parallax .background {
+            transform: translateZ(-6px) scale(6) ;
+            opacity: 0.2;
+            width: 100%;
+        }
+
+
+        .width-auto {
+            width: auto;
+        }
+
+        .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 105, 180)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .text-lg {
+            font-size: 2rem;
+        }
+
+        .fa {
+          padding: 20px;
+          font-size: 50px;
+          width: 100px;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .fa:hover {
+          color: hotpink;
+          text-decoration: none;
+        }
+
+        /* Facebook */
+        .fa-facebook {
+          color: navajowhite;
+        }
+
+        /* Instagram */
+        .fa-instagram {
+          color: navajowhite;
+        }
+
+</style>
+</head>
+
+<body>
+    <nav style="font-size: x-large;" class="navbar navbar-expand-lg">
+          <a class="navbarbrand" href="../homepage_skeleton.html">Lonely Hearts Club
+            <img src="../images/LHC-logo-darkbg.png" width="50px">
+        </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="navlink" href="../lonelyPage/lonely_page.html">Lonely</a>
+                </li>
+                <li class="nav-item">
+                  <a class="navlink" href="../heartsPage/FINAL-HEARTS.html">Hearts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="navlink" href="../clubPage/club_page.html">Club</a>
+                </li>
+                <li class="nav-item">
+                  <a class="navlink" href="../aboutPage/about.html">About</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      <div class="body-wrapper">
+        <section class="content-wrapper">
+            <div class="container" >
+              <h1 style ="text-align: center;">About the Lonely Hearts Club</h1>
+                <p style = "font-family: 'Ash'; font-size: clamp(1.5rem, 6vw, 2rem);">
+                  The LHC is a community created for people who want to overcome their ‘’loneliness’’. Be a part of our LHC story! 
+                </p>
+                <p style = "font-family: 'Ash'; font-size: clamp(1rem, 6vw, 1.5rem);">
+                  On the ‘’Lonely’’ page you can find various articles on loneliness and tips on how to cope with loneliness.
+                </p>
+                <p style = "font-family: 'Ash'; font-size: clamp(1rem, 6vw, 1.5rem); ">
+                  On the ‘’Hearts’’ page you can kill some time playing beloved games like 2048 or PACMAN! You can also WHISPER us your answer to a monthly question and have an opportunity to win valuable prizes!
+                </p>
+                <p style = "font-family: 'Ash'; font-size: clamp(1rem, 6vw, 1.5rem);">
+                  On the ‘’Club’’ page you can find information about upcoming events and keep yourself up to date!
+                </p>
+              <h1 style = "text-align: center; font-size: clamp(2rem, 6vw, 2.5rem);">Follow us and stay updated!</h1>
+              <p style = "text-align: center;">
+              <a href="https://www.facebook.com/Lonely-Hearts-Club-100563895935280" class="fa fa-facebook" target="__blank"></a>
+              
+              <a href="https://www.instagram.com/lonelyheartsclubvienna/" class="fa fa-instagram" target="__blank"></a>
+              </p>
+              </div>
+        
+      </section>
+        <section class="container parallax">
+          <div class="background" style="background-image: url('../images/cool.jpg')"></div>
+        </section>
+    </div>
+    </body>
+</html>
+
+
+
+

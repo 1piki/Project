@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="images/LHC-logo-darkbg.png">
+
+<title>Lonely Hearts Club</title>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    body {
+        background-color: #0a1b2d;
+    }
+    
+    .container1 {
+        font-size: 150px;
+        font-family:"Shagadelic";
+        color: navajowhite;
+        text-shadow: 0px 2px 18px rgba(255, 222, 173, 0.2);
+      }
+
+      .container2{
+        font-size: 150px;
+        font-family:"Gutters";
+        color: navajowhite;
+        text-shadow: 0px 2px 18px rgba(255, 105, 180, 0.3);
+      }
+
+      .container3{
+        font-size: 150px;
+        font-family:"Shagadelic";
+        color: navajowhite;
+        text-shadow: 0px 2px 18px rgba(255, 222, 173, 0.2);
+
+      }
+
+      .container4{
+        font-size: 20px;
+        font-family:"Shagadelic";
+        color: navajowhite;
+        bottom: 0;
+        text-align: center;
+        position: fixed;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      span {
+        display: inline-block;
+        transform:translateY(50%);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      a:link {
+        color: navajowhite;
+        text-decoration: none;
+      }
+      a:visited {
+        color: navajowhite;
+        text-decoration: none;
+      }
+      a:hover {
+        color: hotpink;
+        text-decoration: none;
+      }
+
+      a.sara{
+          color: #951666;
+      }
+      a.sara:link {
+        color: #951666;
+        text-decoration: none;
+      }
+      a.sara:hover {
+        color: hotpink;
+        text-decoration: none;
+      }
+      a.sara:active {
+        color: #951666;
+        text-decoration: none;
+      }
+
+      a:active {
+        color: navajowhite;
+        text-decoration: none;
+      }
+
+      .stair-1{
+                  margin-top: 0px;
+              }
+      .stair-2 {
+                  margin-top: 100px;
+                  margin-left: -200px;
+                  padding-bottom: 30px;
+                  padding-top: 30px;
+                  position: relative;
+              }
+      .stair-3 {
+                  margin-top: 200px;
+                  margin-left: -200px;
+                  padding: 30px;
+              }
+          
+      @font-face {
+        font-family:"Shagadelic";
+        src: url("fonts/BoldTestament-MxlY.ttf") format("truetype");
+      }
+      @font-face {
+        font-family:"Gutters";
+        src: url("fonts/JohnBold-ajV5.ttf") format("truetype");
+      }
+
+
+      @media (max-width: 576px){
+          .container1 {font-size:1.5rem;} 
+          .container2 {font-size:1.5rem;} 
+          .container3 {font-size:1.5rem;}
+          .container-fluid {
+            text-align: center;
+            margin-top: 30px;
+            }
+          .stair-1 {
+              font-size:3rem;  
+              margin-top: 30px;
+              margin-left: 20px;
+              padding-bottom: 20px;
+          } 
+          .stair-2 {
+              font-size:50px;
+              margin-top: 30px;
+              margin-left: -50px;
+              padding-bottom: 0px;
+              position: relative;
+      } 
+          .stair-3 {
+              font-size:50px;
+              margin-top: 60px;
+              margin-left: -75px;
+              padding-bottom: 20px;
+          }
+        @media (max-height: 190px){
+          .container4 {
+            position: absolute;
+            bottom: 0;
+            font-size: 15px;
+          }
+        }
+      }
+      
+
+      @media (min-width: 577px) and (max-width: 766px){
+          .container1 {font-size:3rem;} 
+          .container2 {font-size:3rem;} 
+          .container3 {font-size:3rem;}
+          .container4 {font-size:20px;}
+
+          .container-fluid {
+            text-align: center;
+            margin-top: 50px;
+            }
+          .stair-1 {
+            font-size:5rem;   
+              margin-top: 30px;
+              margin-left: 20px;
+          } 
+          .stair-2 {
+            font-size:5rem;
+              margin-top: 30px;
+              margin-left: -50px;
+              position: relative;
+      } 
+          .stair-3 {
+            font-size:5rem;
+              margin-top: 60px;
+              margin-left: -75px;
+              padding-bottom: 20px;
+          }
+          @media (max-height: 240px){
+          .container4 {
+            position: absolute;
+            bottom: 0;
+            font-size: 15px;
+          }
+        }
+      }
+      @media (min-width: 767px) {  
+          .container1 {font-size:100px;} 
+          .container2 {font-size:100px;} 
+          .container3 {font-size:100px;}
+          .container4 {font-size:20px;}
+          .container-fluid {
+            text-align: center;
+            margin-top: 120px;
+            }
+          .stair-1{
+                  margin-top: 0px;
+              }
+          .stair-2 {
+                  margin-top: 35px;
+                  margin-left: -100px;
+                  padding-bottom: 0px;
+                  padding-top: 20px;
+                  position: relative;
+              }
+          .stair-3 {
+                  margin-top: 100px;
+                  margin-left: -100px;
+                  padding-top: 10px;
+              }
+          @media (max-height: 360px){
+          .container4 {
+            position: absolute;
+            bottom: 0;
+            font-size: 15px;
+          }
+        }
+      }
+      
+      @media (min-width: 962px) {  
+          .container1 {font-size:180px;} 
+          .container2 {font-size:180px;} 
+          .container3 {font-size:180px;}
+          .container4 {font-size:20px;}
+          .container-fluid {
+            text-align: center;
+            margin-top: 120px;
+            }
+          .stair-1{
+            font-size: 180px;              }
+          .stair-2 {
+            font-size: 180px;
+              }
+          .stair-3 {
+            font-size: 180px;
+              }
+          @media (max-height: 360px){
+          .container4 {
+            position: absolute;
+            bottom: 0;
+            font-size: 15px;
+          }
+        }
+      }
+
+</style>
+</head>
+
+<body>
+
+    <div class = "container-fluid" style = "text-align: center;">
+        <div class="row" style = "margin: 0 auto; width:fit-content; margin-left: auto; margin-right: auto; padding-top: 0px; margin-top: -30px;">
+            <div class="container1 stair-1"><a href="lonelyPage/lonely_page.html">LONELY</a></div>
+            <div class="container2 stair-2">
+              <div class="animate__animated animate__heartBeat animate__infinite">
+                <a href="heartsPage/FINAL-HEARTS.html" class = "sara">HEARTS</a>
+              </div>
+            </div>
+            <div class="container3 stair-3"><a href="clubPage/club_page.html">CLUB</a></div>
+        </div>
+    </div>
+
+    <div id = "container-fluid1" class = "container-fluid" style = "text-align: center; position: relative;">
+        <div class="container4"><a href="aboutPage/about.html" target="_blank" >About the project</a> | LHC © 2022</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="test-paralax.css">
+    <link rel="stylesheet" type="text/css" href="../common_css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="../images/LHC-logo-darkbg.png">
+    <title>LHC - Club</title>
+    <style>
+        @font-face {
+            font-family: "Shagadelic";
+            src: url("../fonts/BoldTestament-MxlY.ttf") format("truetype");
+        }
+        @font-face {
+            font-family: "Ash";
+            src: url("../fonts/AshemarkRegular-d7aR.otf") format("truetype");
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background-color: #0a1b2d;
+            color: navajowhite;
+            font-family: "Shagadelic";
+            font-size: 1rem;
+            line-height: 1;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        .container {
+            max-width: 768px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 8rem;
+        }
+
+        .header .container {
+            padding: 3rem 0;
+        }
+
+        h1,
+        h2 {
+            font-family: inherit;
+            line-height: 2.0;
+            text-shadow: 0px 2px 18px rgb(255 255 255 / 10%);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 6rem);
+            color: hotpink;
+            text-shadow: 0px 2px 18px rgb(255 105 180 / 60%);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 6rem);
+        }
+
+        .content-wrapper {
+            padding: 0.5rem 0;
+        }
+
+        .content-wrapper p:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        .body-wrapper {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 10px;
+        }
+
+        .section {
+            position: relative;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:first-of-type {
+            margin-top: 0;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0;
+        }
+
+
+        .parallax {
+            position: relative;
+            min-height: 300px;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            z-index: -1;
+        }
+
+        .parallax>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background-position: center;
+            background-size: cover;
+            filter: contrast(1.2);
+            box-shadow: 0px 0px 8px rgb(255 255 255 / 70%);
+        }
+
+        .parallax>h2 {
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .parallax .background {
+            transform: translateZ(-6px) scale(5);
+            opacity: 0.2;
+            width: 100%;
+        }
+
+        .parallax .foreground {
+            transform: translateZ(-5px) scale(1.5) rotate(2deg);
+            opacity: 0.8;
+            width: 50%;
+        }
+
+        .parallax .bg {
+            transform: translateZ(-6px) scale(2);
+            opacity: 0.6;
+        }
+
+        .parallax .fb {
+            transform: translateZ(-5px) scale(1.5) rotate(2deg);
+            opacity: 0.8;
+            width: 50%;
+        }
+
+        .width-auto {
+            width: auto;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 105, 180)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .text-lg {
+            font-size: 2rem;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 50px;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .fa:hover {
+            color: hotpink;
+            text-decoration: none;
+        }
+
+
+        /* Facebook */
+        .fa-facebook {
+            color: navajowhite;
+        }
+
+        /* Instagram */
+        .fa-instagram {
+            color: navajowhite;
+        }
+
+        #calendar h2 {
+            color: navajowhite;
+        }
+
+        #calendar th {
+            color: hotpink;
+        }
+
+        #calendar_body {
+            text-align: center;
+        }
+
+        #calendar_body table {
+            width: 100%;
+            height: 100%;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #calendar_body th,
+        td {
+            width: 38px;
+            height: 50px;
+        }
+
+        #calendar_body #event_day {
+            color: hotpink;
+        }
+
+        #calendar_body td.today {
+            color: #951666;
+            font-size: 2.5rem;
+        }
+
+        #calendar_body td.not-current {
+            color: #665945;
+        }
+
+        #calendar_body button {
+            border: none;
+            text-align: center;
+            background-color: transparent;
+            color: navajowhite;
+            font-size: 2.3rem;
+
+        }
+
+        #calendar_body #btnPrev {
+            position: relative;
+            left: 20%;
+        }
+
+        #calendar_body #btnNext {
+            position: relative;
+            right: 20%;
+        }
+
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .event {
+            width: 33.33%;
+            padding: 1.2%;
+        }
+
+        .description a {
+            color: hotpink;
+        }
+
+        /* 
+        .event p.location {
+            position: absolute;
+            bottom: 0;
+        }
+        */
+
+        @media (max-width: 850px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .event {
+                width: 90%;
+                margin-bottom: 1%;
+            }
+        }
+
+
+
+        @media screen and (min-width: 481px) {
+            
+            #calendar_body td.today {
+                background-image: url(../images/LHC-calendar-currDay.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            
+            #calendar_body #event_day {
+                background-image: url(../images/LHC-logo-calendar-XL.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+            
+        }
+
+        @media screen and (max-width: 480px) {
+            
+            #calendar_body td.today {
+                background-image: url(../images/LHC-calendar-currDay-XXS.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                /* background-size: ; */
+            }
+
+            #calendar_body #event_day {
+                background-image: url(../images/LHC-logo-calendar-XXS.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+            
+        }
+        .location a.l:link {
+            color: navajowhite;
+            text-decoration: none;
+            }
+
+        .location a.l:visited {
+            color: navajowhite;
+            text-decoration: none;
+            }
+
+            /* mouse over link */
+        .location a.l:hover {
+            color: hotpink;
+            text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <nav style="font-size: x-large; background-color: #0a1b2d;" class="navbar navbar-expand-lg">
+        <a class="navbarbrand" href="../homepage_skeleton.html">Lonely Hearts Club
+            <img src="../images/LHC-logo-darkbg.png" width="50px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="navlink" href="../lonelyPage/lonely_page.html">Lonely</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="../heartsPage/FINAL-HEARTS.html">Hearts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="../clubPage/club_page.html">Club</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navlink" href="../aboutPage/about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="body-wrapper">
+        <section class="container parallax">
+            <div class="background" style="background-image: url('../images/cool.jpg')"></div>
+            <h1 style = "text-align: center; font-size: 5rem;  text-shadow: 0px 2px 18px rgba(255, 105, 180, 0.5);">Our Upcoming Events</h1>
+        </section>
+        <section class="content-wrapper">
+            <div class="container-fluid pt-1">
+                
+                <div class="container-fluid">
+                    <!-- eventcontainer -->
+
+                    <div class="row">
+                        <!--row with events and calendar-->
+                        <div class="flex-container">
+                            <div class="event" style="font-size: 1.4rem;">
+                                <h3 style="font-size: 2.5rem;">
+                                    SPRING BREAK PARTY🥳
+                                </h3>
+
+                                <p class="description" style = "font-family: 'Ash';">
+                                    Wanna kick-off 2 weeks without uni the right way but don't have anyone to go with?
+                                    Worry not, LHC is here to take care of that for you.
+                                    Our team of professional party people is throwing a spring break kick-off
+                                    celebration filled with
+                                    all the music, drinks, and people you would ever want to have there! What are you
+                                    waiting for?
+                                    Come join us!
+                                    <br>
+                                    <a href="#">
+                                        Read more
+                                    </a>
+                                </p>
+                                <p class="location">
+                                    Location:
+                                    <a class = "l" href="https://maps.google.com/maps?q=Janis-Joplin-Promenade,+1220+Wien,+Austria">
+                                        Seepark, Janis-Joplin-Promenade, 1220 Wien, Austria
+                                    </a>
+
+                                    <br>
+                                    Date: 08.04.2022
+                                    <br>
+                                    Price: FREE! (But bring your own booze)
+                                </p>
+                            </div>
+
+                            <div class="event" style="font-size: 1.4rem;">
+                                <h3 style="font-size: 2.5rem;">
+                                    BUDAPEST TRIP
+                                </h3>
+                                <p class="description" style = "font-family: 'Ash';">
+                                    Come along with us to neighbouring Hungary's capital for a good old road trip, LHC
+                                    style!
+                                    We are meeting at the Vienna International Bus Station at Erdberg at 8:30AM, taking
+                                    a bus to Budapest
+                                    and having the time of our lives. LHC is organising a guided tour to all the most
+                                    important sights,
+                                    such as the 700 year old Buda castle, the Parliament, the Heroes' Square and
+                                    Margaret Island.
+                                    Of course we are also taking a lunch break to eat some traditional Hungarian
+                                    cuisine, and trying out the famous
+                                    lángos.
+                                    <br>
+                                    <a href="#">
+                                        Read more
+                                    </a>
+                                </p>
+                                <p class="location">
+                                    Location:
+                                    <a class = "l" href="https://maps.google.com/maps?q=vienna+international+bus+terminal">
+                                        VIB - Vienna International Bus terminal
+                                    </a>
+
+                                    <br>
+                                    Date: 14.04.2022
+                                    <br>
+                                    Price: €15
+                                </p>
+                            </div>
+
+                            <div class="event" style="font-size: 1.4rem;">
+                                <h3 style="font-size: 2.5rem;">
+                                    POTTERY CLASS
+                                </h3>
+                                <p class="description" style = "font-family: 'Ash';">
+                                    Looking to try out a new hobby, perhaps something you haven't done before?
+                                    Why not pottery! We've all seen the videos of the spinning table and people forming
+                                    various
+                                    containers with slow, calculated motions. Pottery is not only a good way to fill
+                                    your kitchen with
+                                    hand-made pottery but also a great way to meet new people and chat about anything
+                                    and everything.
+                                    LHC will provide the location, an instructor as well as some clay, so all we need of
+                                    you is to come try it out!
+                                    <br>
+                                    <a href="#">
+                                        Read more
+                                    </a>
+                                </p>
+                                <p class="location">
+
+                                    Location:
+                                    <a class = "l"
+                                        href="https://maps.google.com/maps?q=Ausstellungsstra%C3%9Fe+59,+1020+Wien,+Austria">
+                                        Ausstellungsstraße 59, 1020 Wien, Austria
+                                    </a>
+
+                                    <!-- For the record, this is a random address -->
+                                    <br>
+                                    Date: 25.04.2022
+                                    <br>
+                                    Price: €7
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end eventcontainer -->
+
+
+                <div class="calendar-wrapper">
+                    <!-- <div class="container" id="calendar_buttons">
+                        <button id="btnPrev" type="button">Prev</button>
+                        <button id="btnNext" type="button">Next</button>
+                    </div> -->
+
+                    <div class="container p-3" id="calendar_body">
+                        <script src="../clubPage/calendar.js"></script>
+                        
+                    </div>
+
+                </div>
+
+                <center>
+                    <h1 style = "text-align: center; font-size: clamp(2rem, 6vw, 2.5rem);">Follow us and stay updated!</h1>
+                    <p style = "text-align: center;">
+                        <a href="https://www.facebook.com/Lonely-Hearts-Club-100563895935280" class="fa fa-facebook" target="__blank"></a>
+                        <a href="https://www.instagram.com/lonelyheartsclubvienna/" class="fa fa-instagram" target="__blank"></a>
+                    </p>
+                </center>
+
+                <!-- 
+                <center>
+                    <div class="calendar_wrapper">
+
+                        <div class="container p-3" id="calendar_body">
+
+
+
+                        </div>
+                    </div>
+                </center>
+ -->
+
+
+                <section class="container parallax">
+                    <div class="background" style="background-image: url('../images/cool.jpg')"></div>
+                </section>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

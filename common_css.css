@@ -1,0 +1,81 @@
+/* 
+Contains the CSS of what will be shared across the pages - fonts, paragraphs, headers, navbar, etc.
+This is all stuff that should look the same on all pages
+*/
+@font-face {
+    font-family:"Shagadelic";
+    src: url("fonts/BoldTestament-MxlY.ttf") format("truetype");
+  }
+body {
+    background-color: #0a1b2d;
+    font-family:"Shagadelic";   
+    font-size:150%;
+}
+
+.nav {
+background-color: #0a1b2d;
+font-size:150%;
+}
+.navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 105, 180)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+a.navlink:link {
+  color: navajowhite;
+  text-decoration: none;
+}
+
+a.navlink:visited {
+  color: navajowhite;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a.navlink:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+a.navbarbrand:link {
+  color: navajowhite;
+  text-decoration: none;
+}
+a.navbarbrand:visited {
+  color: navajowhite;
+  text-decoration: none;
+}
+a.navbarbrand:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+a.navlink:after {
+    content: "\00a0\00a0\00a0";
+}
+a:link {
+  color: navajowhite;
+  text-decoration: none;
+}
+a:visited {
+  color: navajowhite;
+  text-decoration: none;
+}
+a:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+.container-large {
+    font-family:"Shagadelic";
+    background-color: #521d53;
+    color: navajowhite;
+    border-color: #ffdead;
+  }
+.container-sm {
+    background-color: #0a1b2d;
+    font-family:"Shagadelic";
+    color: navajowhite;
+}
+
+.container-color {
+    background-color: #122030;
+}
+
+
